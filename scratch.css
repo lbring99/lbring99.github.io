@@ -1,0 +1,95 @@
+/* scratch.css - Landon Bringhurst Mountain Biking Page */
+
+body {
+    background-color: #e8e0d5;
+    font-family: Georgia, serif;
+    text-align: center;
+    padding-top: 20px;
+    color: #222;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    color: #2d3a2e;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    color: #bd5d38;
+    margin-top: 40px;
+}
+
+p {
+    max-width: 700px;
+    margin: 10px auto;
+    text-align: left;
+    line-height: 1.7;
+}
+
+img {
+    width: 500px;
+    border: 5px solid #2d3a2e;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    text-align: left;
+    max-width: 600px;
+    margin: 10px auto;
+    line-height: 2;
+}
+
+li {
+    font-style: italic;
+}
+
+#hero {
+    background-color: #2d3a2e;
+    color: white;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+#hero h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+#hero span {
+    color: #bd5d38;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #bd5d38;
+    color: white;
+    padding: 8px 24px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    margin-top: 12px;
+}
+
+.topnav {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.topnav a:hover {
+    color: #bd5d38;
+}
+
+.caption {
+    font-style: italic;
+    color: #666;
+    font-size: 0.85rem;
+}

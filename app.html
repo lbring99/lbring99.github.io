@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess My Number - Landon Bringhurst</title>
+    <style>
+        body {
+            background-color: #e8e0d5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        h1 {
+            color: #2d3a2e;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 1rem;
+            width: 150px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 8px 20px;
+            background-color: #bd5d38;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #9e4d2f;
+        }
+
+        #message {
+            font-size: 1.1rem;
+            margin-top: 16px;
+            color: #222;
+        }
+
+        #guesses {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        a {
+            display: block;
+            margin-top: 30px;
+            color: #bd5d38;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guess My Favorite Number</h1>
+    <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
+
+    <input type="number" id="guess" min="1" max="100" placeholder="Enter a number">
+    <br>
+    <button onclick="checkGuess()">Guess</button>
+    <button onclick="resetGame()" style="background-color:#2d3a2e; margin-left:8px;">Reset</button>
+
+    <p id="message"></p>
+    <p id="guesses"></p>
+
+    <a href="index.html">Back to Home</a>
+    <a href="scratch.html">Mountain Biking Page</a>
+
+    <script>
+        var secret = 99;
+        var count = 0;
+
+        function checkGuess() {
+            var val = parseInt(document.getElementById('guess').value);
+
+            if (isNaN(val) || val < 1 || val > 100) {
+                document.getElementById('message').innerHTML = 'Please enter a number between 1 and 100.';
+                return;
+            }
+
+            count++;
+            document.getElementById('guesses').innerHTML = 'Guesses so far: ' + count;
+
+            if (val === secret) {
+                document.getElementById('message').innerHTML = '🎉 Yes! My favorite number is 99! You got it in ' + count + ' guesses!';
+            } else if (val > secret) {
+                document.getElementById('message').innerHTML = 'Too high! Try lower.';
+            } else {
+                document.getElementById('message').innerHTML = 'Too low! Try higher.';
+            }
+
+            document.getElementById('guess').value = '';
+        }
+
+        function resetGame() {
+            count = 0;
+            document.getElementById('message').innerHTML = '';
+            document.getElementById('guesses').innerHTML = '';
+            document.getElementById('guess').value = '';
+        }
+
+        document.getElementById('guess').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') checkGuess();
+        });
+    </script>
+
+</body>
+</html>
